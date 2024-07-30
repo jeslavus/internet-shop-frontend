@@ -176,7 +176,16 @@
     }
   }
 </style>
-
+@for(item of [
+  {id: 1, text: 'test-1'}, 
+  {id: 2, text: 'test-2'}, 
+  {id: 3, text: 'test-3'}, 
+  {id: 4, text: 'test-4'}
+  ]; track item.id) {
+    <p>{{ item.text }}</p>
+  }
+  <div [contentEditable]="isEditable">EDITABLE</div>
+  <button (click)="greet()">Нажми</button>
 <main class="main">
   <div class="content">
     <div class="left-side">
